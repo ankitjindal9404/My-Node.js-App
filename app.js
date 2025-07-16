@@ -1,16 +1,14 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;  // Vercel provides a dynamic port, use `process.env.PORT`
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-// Your other routes go here
-
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-// Export the app for Vercel to use
-module.exports = app;
+// Export the server for testing purposes
+module.exports = { app, server };
