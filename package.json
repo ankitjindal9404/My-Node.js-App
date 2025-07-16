@@ -15,6 +15,7 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
+    "express": "^4.17.1",
     "@eslint/js": "^9.31.0",
     "eslint": "^9.31.0",
     "eslint-config-eslint": "^11.0.0",
