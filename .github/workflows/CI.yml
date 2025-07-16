@@ -27,7 +27,7 @@ jobs:
         run: ls
 
       - name: "Run linting"
-        run: npm run lint
+        run: npx eslint .
 
       - name: "Run test"
         run: npm test
