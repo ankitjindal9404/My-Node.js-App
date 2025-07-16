@@ -29,6 +29,9 @@ jobs:
       - name: Install ESLint globally
         run: npm install -g eslint  # Install ESLint globally in the CI environment
 
+      - name: Install Jest globally
+        run: npm install -g jest  # Install Jest globally in the CI environment
+
       - name: "Run linting"
         run: npx eslint .
 
