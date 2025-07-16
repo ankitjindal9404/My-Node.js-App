@@ -26,6 +26,9 @@ jobs:
       - name: "List Directories"
         run: ls
 
+      - name: Install ESLint globally
+        run: npm install -g eslint  # Install ESLint globally in the CI environment
+
       - name: "Run linting"
         run: npx eslint .
 
