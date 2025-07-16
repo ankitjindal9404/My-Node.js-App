@@ -1,0 +1,36 @@
+name: "Node.js CI"
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Clone repo"
+        uses: actions/checkout@v4
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+
+      - name: "Install Dependencies"
+        run: npm install
+
+      - name: "List Directories"
+        run: ls
+
+      - name: "Run linting"
+        run: npm run lint
+
+      - name: "Run test"
+        run: npm test
+
+      - name: "Buid App"
+        run: npm run build
