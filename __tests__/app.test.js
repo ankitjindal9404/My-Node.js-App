@@ -9,7 +9,11 @@ describe('GET /', () => {
   });
 });
 
-// Close the server after tests
+// Close the server after tests, but only if the server is defined
 afterAll((done) => {
-  server.close(done);  // Use the 'server' instance exported from app.js
+  if (server) {
+    server.close(done);  // Close the server if it's running
+  } else {
+    done();  // If there's no server (e.g., in serverless), just call done
+  }
 });
